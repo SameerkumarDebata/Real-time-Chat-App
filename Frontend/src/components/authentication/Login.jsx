@@ -6,19 +6,19 @@ const Login = () => {
   
   const [loginData,SetLoginData]=useState({
     username:" ",
-    password:" "
+    password:" ",
   })
 
   const handleInputChange=(e)=>{
-    console.log(e.target.name);
-    console.log(e.target.value);
-    SetLoginData({
-      ...loginData,
-      [e.target.name]:e.target.value
-    })
+    SetLoginData((prev) =>({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }))
   };
 
+ 
 
+  
   
 
   return (

@@ -3,22 +3,40 @@ import { FaUser } from "react-icons/fa";
 import { FaKey } from "react-icons/fa6";
 import {Link} from "react-router-dom";
 const Signup = () => {
+
+
+  const [signupData,SetSignupData]=useState({
+      fullname:" ",
+      username:" ",
+      password:" ",
+      confirmPassword:" ",
+    })
   
+    const handleInputChange=(e)=>{
+      SetSignupData((prev) =>({
+        ...prev,
+        [e.target.name]: e.target.value,
+      }))
+    };
+
+    console.log("Signup Data:", signupData);
+    
+    
 
   return (
         <div className="flex justify-center items-center p-6 min-h-screen" >
             
-      <div className="max-w-[40rem] w-full flex flex-col gap-5 bg-base-200 p-6 rounded-lg">
+      <div className="max-w-160 w-full flex flex-col gap-5 bg-base-200 p-6 rounded-lg">
         <h2 className="text-2xl font-semibold">Please Signup..!!</h2>
 
         <label className="input input-bordered flex items-center gap-2">
           <FaUser />
           <input
             type="text"
-            name="username"
+            name="fullname"
             className="grow"
             placeholder="Full name"
-         
+            onChange={handleInputChange}
           />
         </label>
 
@@ -29,6 +47,7 @@ const Signup = () => {
             name="username"
             className="grow"
             placeholder="Username"
+            onChange={handleInputChange}
          
           />
         </label>
@@ -40,7 +59,7 @@ const Signup = () => {
             name="password"
             placeholder="Password"
             className="grow"
-       
+            onChange={handleInputChange}
           />
         </label>
           
@@ -48,10 +67,10 @@ const Signup = () => {
           <FaKey />
           <input
             type="password"
-            name="password"
+            name="confirmPassword"
             placeholder="Confirm Password"
             className="grow"
-       
+            onChange={handleInputChange}
           />
         </label>
 
