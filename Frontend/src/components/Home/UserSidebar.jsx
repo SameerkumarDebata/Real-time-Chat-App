@@ -21,22 +21,11 @@ const UserSidebar = () => {
             </div>
 
             {/* Chat list */}
-            <div className="flex-1 overflow-y-auto px-3">
+            <div className="flex-1 overflow-y-auto px-3 h-full">
                 <User />
                 <User />
                 <User />
-                <User />
-                <User />
-                <User />
-                <User />
-                <User />
-                <User />
-                <User />
-                <User />
-                <User />
-                <User />
-                <User />
-                <User />
+                
 
 
             </div>
